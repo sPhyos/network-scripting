@@ -7,7 +7,7 @@ import socket
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Get the host and define the port
-host = socket.gethostname()
+host = ""
 port = 8080
 
 # Bind the server to the port
@@ -23,7 +23,7 @@ while True:
     print("Connection from", addr)
     
     # Send a message to the client
-    msg = "Connection Established"
+    msg = ""
     client_socket.send(msg.encode('ascii'))
     
     # Close the client connection

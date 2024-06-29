@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#client.py
+# networkingClientSocket.py
 
 import socket
 
@@ -7,7 +7,7 @@ import socket
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Get the host and port
-host = socket.gethostname()
+host = "192.168.0.191"
 port = 8080
 
 # Connect to the server
@@ -20,6 +20,5 @@ msg = client.recv(1024)
 client.close()
 
 # Print the received message
-print(msg.decode('ascii'))
-
+print(msg)
 
