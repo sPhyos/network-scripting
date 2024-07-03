@@ -1,20 +1,15 @@
-# import socket 
+import itertools
 
-# r_host = "www.megacorpone.com"
-# r_port = 80
+# Known first half of the password
+first_half = "discourse"
 
-# request = f"GET / HTTP/1.1\r\nHost: {r_host}\r\n\r\n"
+# List of special characters
+special_chars = ['!', '@', '#', '$', '&']
 
-# client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# client.connect((r_host,r_port))
-# client.send(request.encode())
+# Generate all permutations of the special characters
+permutations = itertools.permutations(special_chars, len(special_chars))
 
-# respone = client.recv(4096)
-# print(respone.decode())
-
-import requests
-
-url = "http://haad.uz:80"
-
-res = requests.get(url)
-print(res.content.decode())
+# Generate and print all possible passwords
+for perm in permutations:
+    password = first_half + ''.join(perm)
+    print(password)
